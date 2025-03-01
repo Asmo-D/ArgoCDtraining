@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: demo-orano
   labels:
-    app: nginx_orano
+    app: nginx-orano
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx_orano
+      app: nginx-orano
   template:
     metadata:
       labels:
-        app: nginx_orano
+        app: nginx-orano
     spec:
       containers:
       - name: demo-ginx-container
