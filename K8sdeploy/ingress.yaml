@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo-orano-ingress
+  namespace: orano-demo
+spec:
+  rules:
+    - host: oranodemo.com
+      http:
+        paths:
+          - path: /
+            pathType: Exact
+            backend:
+              service:
+                name:  demo-orano-svc
+                port:
+                  number: 80
