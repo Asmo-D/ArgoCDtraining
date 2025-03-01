@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo_orano
+  namespace: demo_orano
+  labels:
+    app: nginx_orano
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx_orano
+  template:
+    metadata:
+      labels:
+        app: nginx_orano
+    spec:
+      containers:
+      - name: demo-ginx-container
+        image: nginx_orano:1.0.0
