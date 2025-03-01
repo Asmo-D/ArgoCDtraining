@@ -3,15 +3,17 @@ kind: Ingress
 metadata:
   name: demo-orano-ingress
   namespace: orano-demo
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
   rules:
-    - host: oranodemo.com
+    - host: orano.$IP.sslip.io
       http:
         paths:
           - path: /
-            pathType: Exact
+            pathType: Prefix
             backend:
               service:
-                name:  demo-orano-svc
+                name: demo-orano-svc
                 port:
                   number: 80
