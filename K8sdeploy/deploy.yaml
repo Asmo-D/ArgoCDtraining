@@ -17,3 +17,5 @@ spec:
       containers:
       - name: demo-ginx-container
         image: nginx_orano:1.0.0
+        ports:
+        - containerPort: 80

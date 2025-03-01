@@ -8,5 +8,4 @@ spec:
     app: nginx-orano
   ports:
     - protocol: TCP
-      targetPort: 80
-      port: 8080
+      port: 80
