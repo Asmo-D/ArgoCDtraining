@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo_orano
+  name: demo-orano
   labels:
     app: nginx_orano
 spec:
