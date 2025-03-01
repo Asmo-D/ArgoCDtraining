@@ -7,7 +7,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
   rules:
-    - host: orano.$IP.sslip.io
+    - host: orano.127.0.0.1.sslip.io
       http:
         paths:
           - path: /
