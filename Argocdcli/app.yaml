@@ -1,14 +1,19 @@
-project: default
-source:
-  repoURL: https://github.com/Asmo-D/ArgoCDtraining
-  path: K8sdeploy
-  targetRevision: HEAD
-destination:
-  server: https://kubernetes.default.svc
-  namespace: orano-demo
-syncPolicy:
-  automated:
-    prune: true
-    selfHeal: true
-  syncOptions:
-    - CreateNamespace=true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: orano-demo
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Asmo-D/ArgoCDtraining
+    path: K8sdeploy
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: orano-demo
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
